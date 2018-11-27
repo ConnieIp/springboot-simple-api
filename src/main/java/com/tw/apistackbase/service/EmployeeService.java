@@ -14,11 +14,6 @@ public class EmployeeService {
 
     public EmployeeService() {
         this.employees = new ArrayList<>();
-//        addEmployee(new Employee( "小明", 20, "男"));
-//        addEmployee(new Employee( "小紅", 19, "女"));
-//        addEmployee(new Employee( "小智", 15, "男"));
-//        addEmployee(new Employee( "小剛", 16, "男"));
-//        addEmployee(new Employee( "小霞", 15, "女"));
     }
 
     public List<Employee> getAll() {
@@ -28,5 +23,16 @@ public class EmployeeService {
     public void addEmployee(Employee employee) {
         this.employees.add(employee);
     }
+
+    public Employee deleteEmployee(int id) {
+        for(Employee e:this.employees) {
+            if(e.getId()==id){
+                this.employees.remove(e);
+                return e;
+            }
+        }
+         return null;
+    }
+
 
 }

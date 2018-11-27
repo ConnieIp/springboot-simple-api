@@ -37,4 +37,10 @@ public class EmployeeController {
         return ResponseEntity.ok(employee);
     }
 
+    @DeleteMapping(path="/{id}", produces = {"application/json"})
+    public ResponseEntity<Employee> delete(@PathVariable int id) {
+        Employee employee=employeeService.deleteEmployee(id);
+        return ResponseEntity.ok(employee);
+    }
+
 }
