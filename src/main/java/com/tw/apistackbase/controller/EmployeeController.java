@@ -43,4 +43,10 @@ public class EmployeeController {
         return ResponseEntity.ok(employee);
     }
 
+    @PutMapping(path="/{id}", produces = {"application/json"})
+    public ResponseEntity<Employee> put(@PathVariable int id,@RequestBody Employee employee) {
+        Employee updatedEmployee=employeeService.updateEmployee(id,employee);
+        return ResponseEntity.ok(updatedEmployee);
+    }
+
 }

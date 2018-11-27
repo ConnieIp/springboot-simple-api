@@ -34,5 +34,17 @@ public class EmployeeService {
          return null;
     }
 
+    public Employee updateEmployee(int id, Employee employee) {
+        for(Employee e:this.employees) {
+            if(e.getId()==id){
+                e.setName(employee.getName());
+                e.setAge(employee.getAge());
+                e.setGender(employee.getGender());
+                return e;
+            }
+        }
+        return null;
+    }
+
 
 }
